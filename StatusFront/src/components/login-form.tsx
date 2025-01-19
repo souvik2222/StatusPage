@@ -59,6 +59,12 @@ export const LoginForm = () => {
     }
     return (
         <div className="flex flex-col items-center justify-center h-screen">
+            <h1 onClick={() => {
+                    navigate("/");
+                }}
+                className="text-3xl font-bold font-serif border-dashed border-b">
+                    AlgoStatus
+            </h1>
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(onSubmit)}
