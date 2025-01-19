@@ -8,12 +8,12 @@ require("dotenv").config();
 
 const app = express();
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
+// Serve static files from the React build folder
+app.use(express.static(path.join(__dirname, '../StatusFront')));
 
-// Catch-all handler to serve `index.html` for any route
+// Catch-all handler to serve `index.html` for all routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../StatusFront/index.html'));
 });
 
 // Middleware
