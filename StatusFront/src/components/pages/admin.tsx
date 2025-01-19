@@ -15,6 +15,12 @@ const Admin = () => {
     }, [navigate]);
     return (
         <div>
+            <h1 onClick={() => {
+                    navigate("/");
+                }}
+                className="text-3xl font-bold font-serif border-dashed border-b">
+                    AlgoStatus
+            </h1>
             <IncidentMaintenancePage />
             <ServicesPage />
             <TeamMembersPage />
