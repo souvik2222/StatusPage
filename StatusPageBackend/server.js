@@ -8,6 +8,14 @@ require("dotenv").config();
 
 const app = express();
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Catch-all handler to serve `index.html` for any route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 // Middleware
 app.use(express.json({ extended: true, limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
